@@ -1,0 +1,200 @@
+UI 簡易示意圖,html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: #f5f5f5;
+      width: 320px;
+    }
+    
+    .section {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    .css-input {
+      width: 100%;
+      min-height: 80px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: Monaco, monospace;
+      font-size: 11px;
+      resize: vertical;
+    }
+    
+    .button {
+      background: #007AFF;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+    
+    .style-card {
+      height: 60px;
+      border-radius: 12px;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #666;
+      transition: all 0.2s;
+    }
+    
+    .style-card:hover {
+      transform: translateY(-2px);
+    }
+    
+    /* 預設樣式展示 */
+    .style-1 {
+      background: #e0e0e0;
+      box-shadow: 4px 4px 10px #bcbcbc, -4px -4px 10px #ffffff;
+    }
+    
+    .style-2 {
+      background: #e0e0e0;
+      box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+    }
+    
+    .style-3 {
+      background: #f0f0f0;
+      box-shadow: 2px 2px 5px #d0d0d0, -2px -2px 5px #ffffff;
+    }
+    
+    .style-4 {
+      background: #2e2e2e;
+      box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #424242;
+      color: #aaa;
+    }
+    
+    .slider-container {
+      margin: 16px 0;
+    }
+    
+    .slider {
+      width: 100%;
+      height: 4px;
+      -webkit-appearance: none;
+      background: #ddd;
+      outline: none;
+      border-radius: 2px;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      background: #007AFF;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    
+    .button-secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+    
+    .selection-info {
+      background: #FFF3CD;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #856404;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- 選擇提示 -->
+  <div class="selection-info">
+    未選擇任何圖層
+  </div>
+
+  <!-- CSS 輸入區 -->
+  <div class="section">
+    <label class="label">貼上 CSS 樣式</label>
+    <textarea class="css-input" placeholder="貼上你的 neumorphism CSS，例如：
+background-color: #e0e0e0;
+border-radius: 20px;
+box-shadow: 4px 4px 10px #bcbcbc, -4px -4px 10px #ffffff;"></textarea>
+    <button class="button">解析並應用</button>
+  </div>
+
+  <!-- 預設樣式 -->
+  <div class="section">
+    <label class="label">預設樣式</label>
+    <div class="style-grid">
+      <div class="style-card style-1">凸起</div>
+      <div class="style-card style-2">凹陷</div>
+      <div class="style-card style-3">柔和</div>
+      <div class="style-card style-4">深色</div>
+    </div>
+  </div>
+
+  <!-- 參數調整 -->
+  <div class="section">
+    <label class="label">陰影強度</label>
+    <div class="slider-container">
+      <input type="range" class="slider" min="0" max="100" value="50">
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: #666;">
+        <span>0</span>
+        <span>50</span>
+        <span>100</span>
+      </div>
+    </div>
+    
+    <label class="label" style="margin-top: 16px;">基礎亮度</label>
+    <div class="slider-container">
+      <input type="range" class="slider" min="0" max="100" value="50">
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: #666;">
+        <span>暗</span>
+        <span>50%</span>
+        <span>亮</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 操作按鈕 -->
+  <div class="button-group">
+    <button class="button" style="flex: 1;">套用效果</button>
+    <button class="button button-secondary">重置</button>
+    <button class="button button-secondary">取消</button>
+  </div>
+</body>
+</html>

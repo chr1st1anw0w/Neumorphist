@@ -1,0 +1,12 @@
+{
+  "mcpServers": [
+    {
+      "name": "filesystem",
+      "command": "node",
+      "args": ["./node_modules/@srbhptl39/mcp-superassistant-proxy/filesystem-server.js"],
+      "env": {
+        "MCP_PORT": "3006"
+      }
+    }
+  ]
+}

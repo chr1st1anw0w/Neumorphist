@@ -1,0 +1,48 @@
+<!-- my-neumorphism-plugin/src/ui.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Neumorphism Conversion Tool</h1>
+
+        <div class="section">
+            <h2>CSS Input</h2>
+            <textarea id="css-input" placeholder="Paste full CSS styles here (e.g., background-color: #eee; box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;)" rows="5"></textarea>
+            <button id="apply-css-btn" class="button button--primary">Apply CSS</button>
+        </div>
+
+        <div class="section">
+            <h2>Preset Styles</h2>
+            <div id="style-grid" class="style-grid">
+                <!-- Styles will be dynamically loaded here by ui.ts -->
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="param-group">
+                <label for="shadow-strength">Shadow Strength:</label>
+                <input type="range" id="shadow-strength" min="0.1" max="2.0" step="0.1" value="1.0">
+                <span id="shadow-strength-value">1.0</span>
+            </div>
+            <div class="param-group">
+                <label for="base-color">Base Color (Lightness):</label>
+                <input type="range" id="base-color" min="0" max="100" step="1" value="95">
+                <span id="base-color-value">95%</span>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button id="apply-btn" class="button button--primary">Apply Neumorphism</button>
+            <button id="reset-btn" class="button">Reset Selection</button>
+            <button id="cancel-btn" class="button">Cancel</button>
+        </div>
+    </div>
+
+    <script type="module" src="ui.js"></script>
+</body>
+</html>

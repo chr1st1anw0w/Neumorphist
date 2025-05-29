@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>擬物化轉換工具</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./ui.js"></script>
+</head>
+<body>
+    <header>
+        <h1>擬物化轉換工具</h1>
+    </header>
+    <main>
+        <section id="selection-feedback">
+            <p>未選擇任何圖層</p>
+        </section>
+        <section id="css-input">
+            <h2>CSS 輸入</h2>
+            <textarea id="css-textarea" placeholder="在此貼上 CSS 樣式"></textarea>
+            <button id="apply-css">應用 CSS</button>
+        </section>
+        <section id="preset-styles">
+            <h2>預設樣式</h2>
+            <!-- 扩展 8 格样式选择 -->
+            <div class="preset-grid">
+              <button data-preset="RAISED">↖ 凸起</button>
+              <button data-preset="PRESSED">↙ 凹陷</button>
+              <button data-preset="SOFT">🟢 柔和</button>
+              <button data-preset="DARK">🌑 深色</button>
+              <button data-preset="ACTIVE">🎮 激活态</button>
+              <button data-preset="HIGH_CONTRAST">⚡ 强对比</button>
+              <button data-preset="FLAT">📱 平面</button>
+              <button data-preset="CUSTOM">⚙️ 自定义</button>
+            </div>
+        </section>
+        <section id="parameters">
+            <h2>參數</h2>
+            <div class="param">
+                <label for="shadow-strength">陰影強度：</label>
+                <input type="range" id="shadow-strength" min="0" max="100" value="50">
+                <span id="shadow-value">50</span>
+            </div>
+            <div class="param">
+                <label for="base-lightness">基礎亮度：</label>
+                <input type="range" id="base-lightness" min="0" max="100" value="95">
+                <span id="lightness-value">95%</span>
+            </div>
+        </section>
+        <section id="actions">
+            <button id="apply-effect">應用擬物化</button>
+            <button id="reset">重置選區</button>
+            <button id="cancel">取消</button>
+        </section>
+    </main>
+    <script src="ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "Neumorphism Designer",
+  "id": "neumorphism-designer-plugin",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "icon": "icon.svg",
+  "editorType": [
+    "figma"
+  ],
+  "parameters": [
+    {
+      "name": "Open Neumorphism Designer",
+      "key": "openPlugin"
+    }
+  ],
+  "relaunchButtons": [
+    {
+      "command": "openPluginFromRelaunch",
+      "name": "Neumorphism Designer",
+      "multipleSelection": true
+    }
+  ],
+  "networkAccess": {
+    "allowedDomains": ["*.css-tricks.com"]
+  },
+  "permissions": ["currentUser", "activeDocument"]
+}

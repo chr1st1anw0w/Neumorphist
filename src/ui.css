@@ -1,0 +1,247 @@
+/* Figma Plugin UI 樣式 - 遵循 Figma UI3 設計規範 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #333;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 16px;
+  max-width: 320px;
+}
+
+/* 標題區 */
+.header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 12px;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.selection-info {
+  font-size: 11px;
+  color: #666;
+  background: #f8f8f8;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* 預設樣式網格 */
+.preset-section {
+  margin-bottom: 24px;
+}
+
+.preset-section h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.preset-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.preset-btn {
+  padding: 12px 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fafafa;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.preset-btn:hover {
+  background: #f0f0f0;
+  border-color: #ccc;
+}
+
+.preset-btn.active {
+  background: #0066ff;
+  color: white;
+  border-color: #0066ff;
+}
+
+/* 控制項區域 */
+.controls-section {
+  margin-bottom: 24px;
+}
+
+.controls-section h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.control-group label {
+  flex: 1;
+  font-size: 11px;
+  color: #666;
+}
+
+.control-group input[type="range"] {
+  flex: 2;
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #e0e0e0;
+  outline: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0066ff;
+  cursor: pointer;
+}
+
+.control-group span {
+  font-size: 11px;
+  color: #666;
+  min-width: 24px;
+  text-align: right;
+}
+
+.control-group input[type="color"] {
+  flex: 0 0 32px;
+  height: 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* CSS 輸入區 */
+.css-section {
+  margin-bottom: 24px;
+}
+
+.css-section h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+#css-input {
+  width: 100%;
+  height: 80px;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 10px;
+  resize: vertical;
+  margin-bottom: 8px;
+}
+
+#css-input:focus {
+  outline: none;
+  border-color: #0066ff;
+}
+
+/* 按鈕樣式 */
+.primary-btn {
+  background: #0066ff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex: 1;
+}
+
+.primary-btn:hover {
+  background: #0052cc;
+}
+
+.primary-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.secondary-btn {
+  background: #f8f8f8;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background: #f0f0f0;
+  border-color: #ccc;
+}
+
+/* 操作區 */
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* 訊息提示 */
+.message {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+.message.success {
+  background: #e8f5e8;
+  color: #2d7d2d;
+  border: 1px solid #b3d9b3;
+}
+
+.message.error {
+  background: #fce8e8;
+  color: #c53030;
+  border: 1px solid #f5b2b2;
+}
+
+.message.hidden {
+  display: none;
+}
+
+/* 響應式調整 */
+@media (max-width: 280px) {
+  .preset-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

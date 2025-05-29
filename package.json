@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "/Users/christianwu/Library/CloudStorage/Dropbox/APP-WIP-Coursor/Neumorphist"]
+    }
+  }
+}
