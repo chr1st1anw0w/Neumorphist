@@ -1,66 +1,29 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = (env, argv) => ({
+module.exports = {
+  mode: 'development',
   entry: {
-    code: './src/code.ts',
-    ui: ['./src/ui.ts', './src/styles.css']
-  },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
-    alias: {
-      'react': 'preact/compat',
-      'react-dom': 'preact/compat'
-    }
+    ui: './src/ui.ts',
+    code: './src/code.ts'
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'esbuild-loader',
-        options: {
-          loader: 'tsx',
-          target: 'es2015'
-        }
+        use: 'ts-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
-          }
-        ]
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/ui.html',
-      filename: 'ui.html',
-      chunks: ['ui'],
-      inject: 'body'
-    }),
-    new MiniCssExtractPlugin()
-  ],
-  optimization: {
-    minimize: argv.mode === 'production',
-    minimizer: [new EsbuildPlugin({ target: 'es2015' })]
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.css']
   },
-  devtool: argv.mode === 'development' ? 'source-map' : false,
-  devServer: {
-    hot: true,
-    static: {
-      directory: path.join(__dirname, 'dist')
-    }
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist')
   }
-});
+};
